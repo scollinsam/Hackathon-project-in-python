@@ -1,0 +1,42 @@
+.container {
+    background: lightgray;
+    display: block;
+    text-align: center;
+    height: 500px;
+}
+.header {
+    top: 5px;
+}
+.input {
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    text-align: left;
+    position: relative;
+    left: 6%;
+    top: 2%;
+}
+
+.box {
+    width: 53%;
+    height: 100%;
+    background: whitesmoke;
+    position: relative;
+    left: 23%;
+}
+
+.dropdown {
+    width: 67%;
+}
+
+.desc_line {
+    line-height: 38px;
+    width: 163%;
+}
+
+.submit-btn {
+    margin-top: 8%;
+    width: 100px;
+    height: 30px;
+}

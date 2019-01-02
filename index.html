@@ -1,12 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Hackathon_Proj_Group15</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous">
 </head>
+
 <body>
-Testing123
-<script src="script.js"></script>
+    <div class="container">
+        <div class="box">
+            <h2 class="header">Let us know what you want to learn</h2>
+            <form class="input" action="/form_input" method="POST">
+                <h5 class="desc_line">Topics of Interest</h5>
+                <select class="dropdown" name="categories">
+                    <option value="front-end">Front End Development</option>
+                    <option value="back-end">Back End Development</option>
+                    <option value="entrepreneurship">Entrepreneurship</option>
+                    <option value="data-science">Data Science</option>
+                    <option value="accounting">Accounting</option>
+                    <option value="investment-strategy">Investment-Strategy</option>
+                    <option value="net-secirity">"Network and Security</option>
+                </select>
+                <h5 class="desc_line">What is your address?</h5>
+                <input type="text" class="dropdown" name="address" />
+                <h5 class="desc_line">How many kilometers are you willing to travel?</h5>
+                <input type="text" class="dropdown" name="distance" />
+                <h5 class="desc_line">For how many hours would you like to meet per week?</h5>
+                <select class="dropdown" name="hours">>
+                    <option value="1">1-2</option>
+                    <option value="2">2-4</option>
+                    <option value="3">4-6</option>
+                    <option value="4">6-8</option>
+                    <option value="5">8+</option>
+                </select>
+                <input class="submit-btn" type="submit" value="Find Groups">
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
