@@ -6,9 +6,11 @@ from address_to_lat_long import address_to_coordinates
 KM_TO_DEG_LTD = 110.574
 KM_TO_DEG_LON = 111.320
 
+
 def convert_km_to_deg_longitutde(longitude_km, latitude_km):
     latitude_deg = latitude_km / KM_TO_DEG_LTD
     return longitude_km / (KM_TO_DEG_LON * math.cos(latitude_deg))
+
 
 def convert_km_to_deg_latitude(latitude_km):
     return latitude_km / KM_TO_DEG_LTD
@@ -38,3 +40,20 @@ def query_courses(address, user_category, user_distance, user_hrs_week):
     return res
 
 print(query_courses('Dizengoff Center, Tel-Aviv', 'Machine Learning', 450, 10))
+
+def course_page(course_id):
+    dico = dict()
+    SHOW_A_COURSE = "select * from course where id =" + str(course_id)
+    MAIL = """select email from
+    users inner join course on users.id = course.user_id
+    where course.id = """ + str(course_id)
+
+    cnx = Create_tables.connection()
+    cur = cnx.cursor()
+    cur.execute(SHOW_A_COURSE)
+    course = cur.fetchall()
+    cur.execute(MAIL)
+    mail = cur.fetchall()
+    course[0]['mail'] = mail[0]['email']
+
+    return course
