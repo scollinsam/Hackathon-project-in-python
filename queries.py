@@ -1,5 +1,8 @@
 import math
 import mysql.connector
+import pymysql
+import Create_tables
+from address_to_lat_long import address_to_coordinates
 
 KM_TO_DEG_LTD = 110.574
 KM_TO_DEG_LON = 111.320
@@ -12,14 +15,15 @@ def convert_km_to_deg_latitude(latitude_km):
     return latitude_km / KM_TO_DEG_LTD
 
 
-def query_courses(user_location_longitude, user_location_latitude, user_category, user_distance, user_hrs_week):
+def query_courses(address, user_category, user_distance, user_hrs_week):
+    user_location_latitude, user_location_longitude = address_to_coordinates(address)
     max_long = user_location_longitude + convert_km_to_deg_longitutde(user_distance, user_location_latitude)
     min_long = user_location_longitude - convert_km_to_deg_longitutde(user_distance, user_location_latitude)
 
     max_lat = user_location_latitude + convert_km_to_deg_latitude(user_distance)
     min_lat = user_location_latitude - convert_km_to_deg_latitude(user_distance)
 
-    mydb = mysql.connector.connect(host='localhost', user='root', passwd='rootless')
+    mydb = Create_tables.connection()
     mycursor = mydb.cursor()
 
     sql = """SELECT id, name
@@ -33,4 +37,6 @@ def query_courses(user_location_longitude, user_location_latitude, user_category
 
     res = mycursor.fetchall()[0]
 
-    return [{"course_id":r[0], "course_name":r[1]} for r in res]
+    return [{"course_id": r[0], "course_name":r[1]} for r in res]
+
+query_courses()
