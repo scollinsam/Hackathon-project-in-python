@@ -104,6 +104,6 @@ def main():
     # create_mysql_table('user_course', 'id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, course_id INT, '
     #                                   'FOREIGN KEY (user_id)'
     #                                   'REFERENCES users(id), FOREIGN KEY (course_id) REFERENCES course(id)')
-
+    #
 
 main()
