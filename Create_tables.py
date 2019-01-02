@@ -102,6 +102,7 @@ def main():
                        hrs_per_week INT,
                        url_id INT,
                        category_id INT,
+                       max_num_participants INT,
                        FOREIGN KEY (user_id) REFERENCES users(id),
                        FOREIGN KEY (url_id) REFERENCES url(url_id) ON DELETE CASCADE,
                        FOREIGN KEY (category_id) REFERENCES category(category_id) ON DELETE CASCADE                       
