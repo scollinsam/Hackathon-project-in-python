@@ -39,8 +39,9 @@ def create_category(category):
 
     mycursor = mydb.cursor()
     sql = """INSERT IGNORE INTO category(name) VALUES (%s)"""
-    val = category
-    mycursor.execute(sql % val)
+    val = (category,)
+    mycursor.execute(sql, val)
+    mydb.commit()
     return
 
 
@@ -52,7 +53,6 @@ def create_course(name, user, lon, lat, time_to_meet, hrs, url, category):
     mydb = connection()
     mycursor = mydb.cursor()
 
-
     sql = """INSERT IGNORE INTO course(name, user_id, longitude, latitude,
                                         time_to_meet, hrs_per_week, url_id, 
                                         category_id) VALUES (%s, 
@@ -60,8 +60,9 @@ def create_course(name, user, lon, lat, time_to_meet, hrs, url, category):
                                         %s, %s, %s, %s,
                                         (SELECT url_id FROM url WHERE url=%s)
                                         (SELECT category_id FROM category WHERE name=%s)) """
-    val = name, user, lon, lat, time_to_meet, hrs, url, category
-    mycursor.execute(sql % val)
+    val = (name, user, lon, lat, time_to_meet, hrs, url, category)
+    mycursor.execute(sql, val)
+    mydb.commit()
     return
 
 
@@ -71,12 +72,15 @@ def create_url(url):
 
     mycursor = mydb.cursor()
     sql = """INSERT IGNORE INTO url(url) VALUES(%s)"""
-    val = url
-    mycursor.execute(sql % val)
+    val = (url,)
+    mycursor.execute(sql, val)
+    mydb.commit()
     return
+
 
 def connection():
     return mysql.connector.connect(host='localhost', user='root', passwd='rootless', database='matching')
+
 
 def main():
     create_mysql_db('matching')

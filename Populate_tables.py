@@ -8,3 +8,4 @@ create_user('Sam', 'sam@gmail.com')
 create_user('Simon', 'simon@gmail.com')
 create_user('Mattan', 'drMattan@gmail.com')
 
+create_category('Machine Learning')
