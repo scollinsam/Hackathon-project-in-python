@@ -1,4 +1,5 @@
-import sqlite3
+import mysql.connector
+
 def create_mysql_db(db_name):
     mydb = mysql.connector.connect(host='localhost', user='root', passwd='rootless')
 
@@ -22,6 +23,6 @@ def create_mysql_table(table_name, column_names):
 def main():
     create_mysql_db()
 
-    create_mysql_table('creators', 'id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) UNIQUE')
+    create_mysql_table('user_course', 'id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, course_id INT, FOREIGN KEY (user_id)'
+                                      'REFERENCES users(id), FOREIGN KEY (course_id) REFERENCES courses(id)')
 
-why does this not work?
