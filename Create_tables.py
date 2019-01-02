@@ -26,9 +26,10 @@ def create_user(username, email):
     mydb = connection()
 
     mycursor = mydb.cursor()
-    sql = """INSERT IGNORE INTO users(username, email) VALUES(%s, %s)"""
+    # sql = """INSERT IGNORE INTO users(username, email) VALUES (%s, %s)"""
     val = (username, email)
-    mycursor.execute(sql % val)
+    mycursor.execute("""INSERT IGNORE INTO users(username, email) VALUES (%s, %s)""", val)
+    mydb.commit()
     return
 
 
@@ -37,14 +38,14 @@ def create_category(category):
     mydb = connection()
 
     mycursor = mydb.cursor()
-    sql = """INSERT IGNORE INTO category(name) VALUES(%s)"""
+    sql = """INSERT IGNORE INTO category(name) VALUES (%s)"""
     val = category
     mycursor.execute(sql % val)
     return
 
 
 def create_course(name, user, lon, lat, time_to_meet, hrs, url, category):
-   """Create an entry in courses"""
+    """Create an entry in courses"""
     create_url(url)
     create_category(category)
 
@@ -54,7 +55,7 @@ def create_course(name, user, lon, lat, time_to_meet, hrs, url, category):
 
     sql = """INSERT IGNORE INTO course(name, user_id, longitude, latitude,
                                         time_to_meet, hrs_per_week, url_id, 
-                                        category_id) VALUES(%s, 
+                                        category_id) VALUES (%s, 
                                         (SELECT ID FROM users WHERE username=%s),
                                         %s, %s, %s, %s,
                                         (SELECT url_id FROM url WHERE url=%s)
