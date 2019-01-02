@@ -21,22 +21,20 @@ def query_courses(address, user_category, user_distance, user_hrs_week):
 
     max_lat = user_location_latitude + convert_km_to_deg_latitude(user_distance)
     min_lat = user_location_latitude - convert_km_to_deg_latitude(user_distance)
-
     mydb = Create_tables.connection()
     mycursor = mydb.cursor()
 
     sql = """SELECT course.id, course.name
     FROM course INNER JOIN category ON course.category_id=category.category_id
-    WHERE (category.category=%s) and
+    WHERE (category.name="%s") and
     (course.longitude BETWEEN %f and %f) and 
     (course.latitude BETWEEN %f and %f) and 
     (course.hrs_per_week<=%d)"""
     values = (user_category, min_long, max_long, min_lat, max_lat, user_hrs_week)
-    print(sql % values)
+
     mycursor.execute(sql % values)
-    mycursor.execute(sql)
 
     res = mycursor.fetchall()
     return res
 
-print(query_courses('Dizengoff Center, Tel-Aviv', 'Machine Learning', 50, 10))
+print(query_courses('Dizengoff Center, Tel-Aviv', 'Machine Learning', 450, 10))
