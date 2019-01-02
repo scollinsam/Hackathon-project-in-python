@@ -23,6 +23,7 @@ def query_courses(address, user_category, user_distance, user_hrs_week):
 
     max_lat = user_location_latitude + convert_km_to_deg_latitude(user_distance)
     min_lat = user_location_latitude - convert_km_to_deg_latitude(user_distance)
+
     mydb = Create_tables.connection()
     mycursor = mydb.cursor()
 
