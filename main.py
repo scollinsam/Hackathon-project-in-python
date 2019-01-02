@@ -6,6 +6,9 @@ bottle.TEMPLATE_PATH.insert(0, os.getcwd())
 
 info = {}
 
+dummy_data = [{"category": "front end", "address": "18 Shoken Street", "distance": "0km", "hours": "8+"},
+              {"category": "back end", "address": "18 Shoken Street", "distance": "0km", "hours": "8+"},]
+
 @route('/')
 def index():
     return template("index.html")
@@ -42,7 +45,7 @@ def send_input():
 @route('/set_input')
 def show_groups():
     print("in function")
-    return json.dumps(info)
+    return json.dumps(dummy_data)
 
 
 def main():
