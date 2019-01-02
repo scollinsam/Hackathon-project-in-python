@@ -26,17 +26,19 @@ def query_courses(address, user_category, user_distance, user_hrs_week):
     mydb = Create_tables.connection()
     mycursor = mydb.cursor()
 
-    sql = """SELECT id, name
-    FROM course INNER JOIN category ON course.category_id=category.category_id 
-    WHERE category=%s and 
-    longitude BETWEEN %f and %f and 
-    latitude BETWEEN %f and %f and 
-    hrs_per_week<=%d"""
+    sql = """SELECT course.id, course.name
+    FROM course INNER JOIN category ON course.category_id=category.category_id
+    WHERE (category.category=%s) and
+    (course.longitude BETWEEN %f and %f) and 
+    (course.latitude BETWEEN %f and %f) and 
+    (course.hrs_per_week<=%d)"""
     values = (user_category, min_long, max_long, min_lat, max_lat, user_hrs_week)
+    print(sql % values)
     mycursor.execute(sql % values)
+    mycursor.execute(sql)
 
-    res = mycursor.fetchall()[0]
+    res = mycursor.fetchall()
+    # return [{"course_id": r[0], "course_name":r[1]} for r in res]
+    return res
 
-    return [{"course_id": r[0], "course_name":r[1]} for r in res]
-
-query_courses()
+print(query_courses('Dizengoff Center, Tel-Aviv', 'Machine Learning', 50, 10))
