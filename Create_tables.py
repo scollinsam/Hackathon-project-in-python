@@ -38,12 +38,14 @@ def main():
                        latitude FLOAT(10, 7),
                        time_to_meet VARCHAR(255),
                        hrs_per_week INT,
+                       url_id INT,
+                       category_id INT,
                        FOREIGN KEY (url_id) REFERENCES url(url_id) ON DELETE CASCADE,
                        FOREIGN KEY (category_id) REFERENCES category(category_id) ON DELETE CASCADE                       
                        """)
     create_mysql_table('user_course', 'id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, course_id INT, '
                                       'FOREIGN KEY (user_id)'
-                                      'REFERENCES users(id), FOREIGN KEY (course_id) REFERENCES courses(id)')
+                                      'REFERENCES users(id), FOREIGN KEY (course_id) REFERENCES course(id)')
 
 
 main()
