@@ -1,5 +1,4 @@
 import math
-import mysql.connector
 import pymysql
 import Create_tables
 from address_to_lat_long import address_to_coordinates
@@ -38,7 +37,6 @@ def query_courses(address, user_category, user_distance, user_hrs_week):
     mycursor.execute(sql)
 
     res = mycursor.fetchall()
-    # return [{"course_id": r[0], "course_name":r[1]} for r in res]
     return res
 
 print(query_courses('Dizengoff Center, Tel-Aviv', 'Machine Learning', 50, 10))
