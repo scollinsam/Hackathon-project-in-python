@@ -28,9 +28,11 @@ def main():
                        """id INT AUTO_INCREMENT PRIMARY KEY,
                        username VARCHAR(255) UNIQUE,
                        email VARCHAR(255) UNIQUE""")
+
     create_mysql_table('url', 'url_id INT AUTO_INCREMENT PRIMARY KEY, url VARCHAR(255) UNIQUE')
 
     create_mysql_table('category', 'category_id INT AUTO_INCREMENT PRIMARY KEY, name varchar(100)')
+
     create_mysql_table('course',
                        """id INT AUTO_INCREMENT PRIMARY KEY,
                        name VARCHAR(255),
