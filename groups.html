@@ -11,14 +11,17 @@
 </head>
 
 <body>
-    <div id="container">
-        <div id="group-container">
-            {% for item in groups %}
-            {% for key, value in item.items() %}
-            <dt>Group {{ key }}</dt>
-            <dd>{{ value }}</dd>
-            {% endfor %}
-            {% endfor %}
+    <div class="page">
+        <div id="container">
+            <div id="group-container">
+                {% for item in groups %}
+                {% for key, value in item.items() %}
+                <dt>Group {{ key }}</dt>
+                <dd>{{ value }}</dd>
+                {% endfor %}
+                {% endfor %}
+                <button type="button" class = "select-btn" value = "Select">Select</button>
+            </div>
         </div>
     </div>
 
