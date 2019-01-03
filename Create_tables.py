@@ -2,7 +2,7 @@
 import pymysql
 
 def create_mysql_db(db_name):
-    mydb = mysql.connector.connect(host='localhost', user='root', passwd='rootless')
+    mydb = pymysql.connect(host='localhost', user='root', passwd='16769thSQL')
 
     mycursor = mydb.cursor()
 
@@ -46,7 +46,7 @@ def create_category(category):
     return
 
 
-def create_course(name, user, lon, lat, time_to_meet, hrs, url, category, num_participants):
+def create_course(name, user, lat, lon, time_to_meet, hrs, url, category, num_participants):
     """Create an entry in courses"""
     create_url(url)
     create_category(category)
@@ -82,14 +82,14 @@ def create_url(url):
 
 
 def connection():
-    # return mysql.connector.connect(host='localhost', user='root', passwd='rootless', database='matching')
-    return pymysql.connect(host='db4free.net',
-                             user='elliotw',
-                             password='rootless',
-                             db='matching',
-                             charset='utf8',
-                             autocommit=True,
-                             cursorclass=pymysql.cursors.DictCursor)
+    return pymysql.connect(host='localhost', user='root', passwd='16769thSQL', database='matching')
+    # return pymysql.connect(host='db4free.net',
+    #                          user='elliotw',
+    #                          password='rootless',
+    #                          db='matching',
+    #                          charset='utf8',
+    #                          autocommit=True,
+    #                          cursorclass=pymysql.cursors.DictCursor)
 
 
 def course_page(course_id):
@@ -123,7 +123,7 @@ def course_page(course_id):
     return dico
 
 def main():
-    # create_mysql_db('matching')
+    create_mysql_db('matching')
 
     create_mysql_table('users',
                        """id INT AUTO_INCREMENT PRIMARY KEY,
@@ -152,4 +152,4 @@ def main():
     #                                   'REFERENCES users(id), FOREIGN KEY (course_id) REFERENCES course(id)')
 
 
-course_page(1)
+main()
