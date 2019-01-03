@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Groups results{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="groups.css">
+{% endblock %}
+
+{% block content %}
+    <div class="page">
+        <div id="container">
+            <div id="group-container">
+                {% for item in groups %}
+                    {% for key, value in item.items() %}
+                        <dt>Group {{ key }}</dt>
+                        <dd>{{ value }}</dd>
+                    {% endfor %}
+                    <form action = "/group" method="GET">
+                        <input type="submit" class = "select-btn" value = "Select"/>
+                        <input type = "hidden" name = "group_id" value="{{ item['id'] }}"/>
+                    </form>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

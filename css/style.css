@@ -1,5 +1,9 @@
+*{margin: 0; padding: 0, }
+body {
+    background-image: url(https://data.whicdn.com/images/296952513/original.jpg?t=1505164641);
+}
+
 .container {
-    background: lightgray;
     display: block;
     text-align: center;
     height: 500px;
@@ -21,9 +25,11 @@
 .box {
     width: 53%;
     height: 100%;
-    background: whitesmoke;
+    background: black;
     position: relative;
     left: 23%;
+    top: 10%;
+    color: whitesmoke
 }
 
 .dropdown {

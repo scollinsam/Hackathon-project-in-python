@@ -40,7 +40,7 @@ def query_courses(address, user_category, user_distance, user_hrs_week):
     res = mycursor.fetchall()
     return res
 
-print(query_courses('Dizengoff Center, Tel-Aviv', 'Machine Learning', 450, 10))
+print(query_courses('10 ben yehuda, Tel-Aviv, Israel', 'data science', 1000, 10))
 
 def course_page(course_id):
     dico = dict()
