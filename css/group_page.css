@@ -7,6 +7,10 @@
 		margin: 120px auto 0px auto;
 	}
 
+	body {
+        background-image: url(https://data.whicdn.com/images/296952513/original.jpg?t=1505164641);
+    }
+
 	.centered {
 		text-align: center;
 	}
@@ -158,6 +162,8 @@
 	.group{
 	    width:600px;
 	    margin: auto;
+	    background-color: #d4d4d4c4;
+	    padding:20px;
 	}
 
 

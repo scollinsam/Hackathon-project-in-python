@@ -1,25 +1,29 @@
 {% extends "base.html" %}
-{% block title %}Groups results{% endblock %}
+{% block title %} Groups results {% endblock %}
 {% block head %}
     {{ super() }}
-    <link rel="stylesheet" type="text/css" href="groups.css">
+    <link rel="stylesheet" type="text/css" href="/css/groups.css">
 {% endblock %}
 
 {% block content %}
-    <div class="page">
+    <div id="main">
         <div id="container">
-            <div id="group-container">
-                {% for item in groups %}
-                    {% for key, value in item.items() %}
-                        <dt>Group {{ key }}</dt>
-                        <dd>{{ value }}</dd>
-                    {% endfor %}
+            {% for item in groups %}
+                <div class="group-container">
+                    <div class="group_info">
+                        <h4>{{item['name']}}</h4>
+                    <!--{% for key, value in item.items() %}-->
+                        <!--<dt>Group {{ key }}</dt>-->
+                        <!--<dd>{{ value }}</dd>-->
+                    <!--{% endfor %}-->
+                    </div>
+
                     <form action = "/group" method="GET">
                         <input type="submit" class = "select-btn" value = "Select"/>
                         <input type = "hidden" name = "group_id" value="{{ item['id'] }}"/>
                     </form>
-                {% endfor %}
-            </div>
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endblock %}

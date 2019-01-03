@@ -19,19 +19,10 @@ def index():
     return template("index.html")
 
 
-@route('/style.css')
-def css():
-    return static_file("style.css", root='css')
-
-@route('/groups.css')
-def css():
-    return static_file("groups.css", root='css')
-
-
-@route('/group/group_page.css')
-def css():
+@route('/css/<css_file>')
+def css(css_file):
     print("css called")
-    return static_file("group_page.css", root='css')
+    return static_file(css_file, root='css')
 
 
 @route('/script.js')
@@ -52,9 +43,9 @@ def greet():
     print(course_return)
     print(course_return["latitude"])
     print(float(course_return["latitude"]))
-    address = address_to_lat_long.coordinates_to_address(float(course_return["latitude"]), float(course_return["longitude"]))
+    address = address_to_lat_long.coordinates_to_address(float(course_return["latitude"]),
+                                                         float(course_return["longitude"]))
     return {"course": course_return, "address": address[0]['formatted']}
-    # return template('Hello {{name}}, how are you?', name=name)
 
 
 @get('/form_input')

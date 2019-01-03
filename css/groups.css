@@ -1,27 +1,32 @@
-*{margin: 0; padding: 0, }
-.page {
-    height: 700px;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    background: black;
-}
 #container {
-    height: 500px;
-    width: 60%;
-    display: flex;
+    width:800px;
+    margin:auto;
     justify-content: center;
 }
 
-#group-container {
-    float: left;
-    width: 26%;
-    height: 30%;
-    background: blue;
+.group-container {
+    margin: 20px auto;
+    width: 70%;
+    height: 150px;
+    background-color: #d4d4d4c4;
     position: relative;
-    top: 10%;
     text-align: center;
+    padding:20px;
 }
 .select-btn {
 
+}
+
+.group_info{
+    float:left;
+    margin-top:38px;
+}
+
+form{
+    float:right;
+}
+
+input.select-btn{
+    width:100px;
+    height:100px;
 }
