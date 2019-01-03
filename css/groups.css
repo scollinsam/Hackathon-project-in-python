@@ -1,14 +1,27 @@
+*{margin: 0; padding: 0, }
+.page {
+    height: 700px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: black;
+}
 #container {
     height: 500px;
-    width: 50%;
+    width: 60%;
     display: flex;
     justify-content: center;
 }
 
 #group-container {
-    height: 150px;
     float: left;
-    width: 25%;
+    width: 26%;
+    height: 30%;
     background: blue;
+    position: relative;
+    top: 10%;
     text-align: center;
+}
+.select-btn {
+
 }

@@ -19,19 +19,10 @@ def index():
     return template("index.html")
 
 
-@route('/style.css')
-def css():
-    return static_file("style.css", root='css')
-
-@route('/groups.css')
-def css():
-    return static_file("groups.css", root='css')
-
-
-@route('/group/group_page.css')
-def css():
+@route('/css/<css_file>')
+def css(css_file):
     print("css called")
-    return static_file("group_page.css", root='css')
+    return static_file(css_file, root='css')
 
 
 @route('/script.js')
@@ -42,16 +33,15 @@ def js():
 def js():
     return static_file("groups.js", root='js')
 
-@route('/group/<name>')
+
+@get('/group')
 @view('group_page.html')
-def greet(name='Stranger'):
-    name_r = "Data Science NLP"
-    organiser_r = "Simono"
-    level_r = "Beginner"
-    location_r = "rothschild area"
-    frequency_r = "6h/week"
-    return {'name': name_r, 'organiser': organiser_r, 'level':level_r, 'location':location_r, 'frequency':frequency_r}
-    # return template('Hello {{name}}, how are you?', name=name)
+def greet():
+    course_id = request.GET.dict['group_id'][0]
+    print(course_id)
+    course_return = queries.course_page(course_id)
+    print(course_return)
+    return course_return[0]
 
 @get('/form_input')
 @view('groups.html')

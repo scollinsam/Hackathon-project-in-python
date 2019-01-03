@@ -12,13 +12,13 @@
             <h1>
                 {{name}}
             </h1>
-            <h4>Organised by <span>{{organiser}}</span></h4>
+            <h4>Participants: <span>{{num_participants}}</span></h4>
             <ul>
-                <li>level: {{level}}</li>
-                <li>Location: {{location}}</li>
-                <li>Frequency:{{frequency}}</li>
+                <li>Meeting time: {{time_to_meet}}</li>
+                <li>Hours per week: {{hrs_per_week}}</li>
             </ul>
-            <button>Join group</button>
+            <button onclick="location.href='mailto:{{mail}}?subject=Mail from Our Site'" type="button">
+            contact us</button>
         </div>
     </div>
 {% endblock %}
