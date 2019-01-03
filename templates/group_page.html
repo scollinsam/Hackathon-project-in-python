@@ -10,14 +10,14 @@
     <div id="main">
         <div class="group">
             <h1>
-                {{group["name"]}}
+                {{course["name"]}}
             </h1>
-            <h4>Number of participants: <span>{{group["num_participants"]}}</span></h4>
+            <h4>Number of participants: <span>{{course["num_participants"]}}</span></h4>
             <ul>
                 <li>Location: {{address}}</li>
-                <li>Meeting times: {{group["time_to_meet"]}}s</li>
-                <li>Frequency:{{group["hrs_per_week"]}} hours per week</li>
-                <li>Organizer's email: {{group["mail"]}}</li>
+                <li>Meeting times: {{course["time_to_meet"]}}s</li>
+                <li>Frequency:{{course["hrs_per_week"]}} hours per week</li>
+                <li>Organizer's email: {{course["mail"]}}</li>
             </ul>
             <button>Join group</button>
         </div>

@@ -50,11 +50,10 @@ def greet():
     print(course_id)
     course_return = queries.course_page(course_id)
     print(course_return)
-    for item in course_return:
-        print(item(int("latitiude")))
-        address = address_to_lat_long.coordinates_to_address(item(float("latitiude")), item(float("longitude")))
-        print(address)
-        return {"course": item, "address": address}
+    print(course_return["latitude"])
+    print(float(course_return["latitude"]))
+    address = address_to_lat_long.coordinates_to_address(float(course_return["latitude"]), float(course_return["longitude"]))
+    return {"course": course_return, "address": address[0]['formatted']}
     # return template('Hello {{name}}, how are you?', name=name)
 
 
