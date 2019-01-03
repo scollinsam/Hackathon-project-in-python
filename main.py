@@ -1,4 +1,4 @@
-import queries
+import queries, address_to_lat_long
 import bottle
 from bottle import route, run, template, static_file, post, request, get, jinja2_view
 import os
@@ -50,7 +50,11 @@ def greet():
     print(course_id)
     course_return = queries.course_page(course_id)
     print(course_return)
-    return {"course": course_return}
+    for item in course_return:
+        print(item(int("latitiude")))
+        address = address_to_lat_long.coordinates_to_address(item(float("latitiude")), item(float("longitude")))
+        print(address)
+        return {"course": item, "address": address}
     # return template('Hello {{name}}, how are you?', name=name)
 
 
