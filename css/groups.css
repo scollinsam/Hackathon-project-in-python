@@ -1,0 +1,14 @@
+#container {
+    height: 500px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+#group-container {
+    height: 150px;
+    float: left;
+    width: 25%;
+    background: blue;
+    text-align: center;
+}

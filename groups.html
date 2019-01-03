@@ -5,12 +5,22 @@
     <meta charset="UTF-8">
     <title>Groups</title>
     <title>Hackathon_Proj_Group15</title>
+    <link rel="stylesheet" type="text/css" href="groups.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
 </head>
 
 <body>
-    <div id="groupslist"></div>
+    <div id="container">
+        <div id="group-container">
+            {% for item in groups %}
+            {% for key, value in item.items() %}
+            <dt>Group {{ key }}</dt>
+            <dd>{{ value }}</dd>
+            {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>

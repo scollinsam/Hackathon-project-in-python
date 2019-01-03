@@ -94,27 +94,31 @@ def connection():
 
 def course_page(course_id):
     dico = dict()
-    SHOW_A_COURSE = "select * from course where courseID" + course_id + ";"
+    SHOW_A_COURSE = "select * from course where id =" + str(course_id)
     MAIL = """select email from
     users inner join course on users.id = course.user_id
-    where course_id = """ + course_id + ";"
+    where course.id = """ + str(course_id)
 
-    cnx = con.connect(host='localhost', user='root', passwd='password')
+    cnx = connection()
     cur = cnx.cursor()
     cur.execute(SHOW_A_COURSE)
     course = cur.fetchall()
     cur.execute(MAIL)
     mail = cur.fetchall()
+    course[0]['mail'] = mail[0]['email']
 
-    dico['id'] = course[0]
-    dico['name'] = course[1]
-    dico['longitude'] = course[2]
-    dico['latitude'] = course[3]
-    dico['time_to_meet'] = course[4]
-    dico['hrs_per_week'] = course[5]
-    dico['url_id'] = course[6]
-    dico['category_id'] = course[7]
-    dico['mail'] = mail
+    print(course)
+    # dico['id'] = course[0]
+    # dico['name'] = course[1]
+    # dico['user_id'] = course[2]
+    # dico['longitude'] = course[3]
+    # dico['latitude'] = course[4]
+    # dico['time_to_meet'] = course[5]
+    # dico['hrs_per_week'] = course[6]
+    # dico['url_id'] = course[7]
+    # dico['category_id'] = course[8]
+    # dico['num_participants'] = course[9]
+    # dico['mail'] = mail
 
     return dico
 
@@ -148,4 +152,4 @@ def main():
     #                                   'REFERENCES users(id), FOREIGN KEY (course_id) REFERENCES course(id)')
 
 
-main()
+course_page(1)
