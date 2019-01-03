@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Groups results{% endblock %}
+{% block head %}
+    {{ super() }}
+    <link rel="stylesheet" type="text/css" href="groups.css">
+{% endblock %}
+
+{% block content %}
+    <div class="page">
+        <div id="container">
+            <div id="group-container">
+                {% for item in groups %}
+                {% for key, value in item.items() %}
+                <dt>Group {{ key }}</dt>
+                <dd>{{ value }}</dd>
+                {% endfor %}
+                {% endfor %}
+                <button type="button" class = "select-btn" value = "Select">Select</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
