@@ -1,6 +1,6 @@
 import queries
 import bottle
-from bottle import route, run, template, static_file, post, request, get
+from bottle import route, run, template, static_file, post, request, get, jinja2_view
 import os
 import json
 from functools import partial
@@ -54,7 +54,7 @@ def greet(name='Stranger'):
     # return template('Hello {{name}}, how are you?', name=name)
 
 @get('/form_input')
-@jinja2_view('groups.html')
+@view('groups.html')
 def send_input():
     category = request.GET.dict['categories'][0]
     print(category)
