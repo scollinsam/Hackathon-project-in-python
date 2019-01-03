@@ -1,4 +1,4 @@
-import queries
+import queries, address_to_lat_long
 import bottle
 from bottle import route, run, template, static_file, post, request, get, jinja2_view
 import os
@@ -41,7 +41,12 @@ def greet():
     print(course_id)
     course_return = queries.course_page(course_id)
     print(course_return)
-    return course_return[0]
+    print(course_return["latitude"])
+    print(float(course_return["latitude"]))
+    address = address_to_lat_long.coordinates_to_address(float(course_return["latitude"]),
+                                                         float(course_return["longitude"]))
+    return {"course": course_return, "address": address[0]['formatted']}
+
 
 @get('/form_input')
 @view('groups.html')
