@@ -10,12 +10,15 @@
         <div id="container">
             <div id="group-container">
                 {% for item in groups %}
-                {% for key, value in item.items() %}
-                <dt>Group {{ key }}</dt>
-                <dd>{{ value }}</dd>
+                    {% for key, value in item.items() %}
+                        <dt>Group {{ key }}</dt>
+                        <dd>{{ value }}</dd>
+                    {% endfor %}
+                    <form action = "/group" method="GET">
+                        <input type="submit" class = "select-btn" value = "Select"/>
+                        <input type = "hidden" name = "group_id" value="{{ item['id'] }}"/>
+                    </form>
                 {% endfor %}
-                {% endfor %}
-                <button type="button" class = "select-btn" value = "Select">Select</button>
             </div>
         </div>
     </div>
