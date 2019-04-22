@@ -8,7 +8,9 @@
 	}
 
 	body {
-        background-image: url(https://data.whicdn.com/images/296952513/original.jpg?t=1505164641);
+		background-image: url(https://data.whicdn.com/images/296952513/original.jpg?t=1505164641);
+		background-repeat: no-repeat;
+		background-size: cover;
     }
 
 	.centered {
@@ -96,14 +98,14 @@
 		padding: 30px;
 		display: inline-block;
 		color: white;
-		width: 150px;
+		width: 200px;
 	}
 
 	#nav .logo{
 		padding: 7px;
 		display: inline-block;
 		position: relative;
-
+		color: #0375B2;
 	}
 
 

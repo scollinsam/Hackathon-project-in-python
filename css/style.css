@@ -1,6 +1,8 @@
 *{margin: 0; padding: 0, }
 body {
     background-image: url(https://data.whicdn.com/images/296952513/original.jpg?t=1505164641);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container {
@@ -15,19 +17,21 @@ body {
     height: 95%;
     display: flex;
     flex-direction: column;
-    width: 50%;
+    width: 100%;
     text-align: left;
+    align-content:center;
     position: relative;
-    left: 6%;
-    top: 2%;
+    left: 18%;
+    top: 10%;
 }
 
 .box {
-    width: 53%;
+    padding-top:3%;
+    width: 40%;
     height: 100%;
     background: black;
     position: relative;
-    left: 23%;
+    left: 29%;
     top: 10%;
     color: whitesmoke
 }

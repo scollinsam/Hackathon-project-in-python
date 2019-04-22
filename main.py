@@ -2,10 +2,12 @@ import queries, address_to_lat_long
 import bottle
 from bottle import route, run, template, static_file, post, request, get, jinja2_view
 import os
+import sys
 import json
 from functools import partial
-bottle.TEMPLATE_PATH.insert(0, os.getcwd())
-
+# bottle.TEMPLATE_PATH.insert(0, os.getcwd())
+# print((0, os.getcwd()))
+path = sys.path[0]
 # the partial makes it possible to write less verbose decorators to choose the html file
 view = partial(jinja2_view, template_lookup=['templates'])
 info = {}
@@ -14,24 +16,15 @@ info = {}
 dummy_data = [{"category": "front end", "address": "18 Shoken Street", "distance": "0km", "hours": "8+"},
               {"category": "back end", "address": "18 Shoken Street", "distance": "0km", "hours": "8+"},]
 
-@route('/')
+@get('/')
 def index():
-    return template("index.html")
+    return template(path + "\\templates\\index.html")
 
 
 @route('/css/<css_file>')
 def css(css_file):
     print("css called")
     return static_file(css_file, root='css')
-
-
-@route('/script.js')
-def js():
-    return static_file("script.js", root='js')
-
-@route('/groups.js')
-def js():
-    return static_file("groups.js", root='js')
 
 
 @get('/group')
