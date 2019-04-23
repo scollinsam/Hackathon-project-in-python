@@ -1,5 +1,6 @@
 # import mysql.connector
 import pymysql
+from sys import argv
 
 def create_mysql_db(db_name):
     mydb = pymysql.connect(host='localhost', user='root', passwd='16769thSQL')
@@ -82,7 +83,7 @@ def create_url(url):
 
 
 def connection():
-    return pymysql.connect(host='localhost', user='root', passwd='16769thSQL', database='matching', port=3307)
+    return pymysql.connect(host='0.0.0.0', user='root', passwd='16769thSQL', database='matching')
     # return pymysql.connect(host='db4free.net',
     #                          user='elliotw',
     #                          password='rootless',
