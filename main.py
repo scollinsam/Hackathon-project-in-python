@@ -3,6 +3,7 @@ import bottle
 from bottle import route, run, template, static_file, post, request, get, jinja2_view
 import os
 import sys
+from sys import argv
 import json
 from functools import partial
 # bottle.TEMPLATE_PATH.insert(0, os.getcwd())
@@ -64,7 +65,7 @@ def show_groups():
 
 
 def main():
-    run(host='localhost', port=7000)
+    run(host='0.0.0.0', port=argv[1])
 
 if __name__ == '__main__':
     main()
