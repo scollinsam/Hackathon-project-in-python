@@ -66,8 +66,8 @@ def show_groups():
 
 
 def main():
-    run(host='0.0.0.0', port=port)
+    run(host='0.0.0.0', port=argv[1])
 
 if __name__ == '__main__':
-    port = os.environ.get('PORT', 5000)
+
     main()
