@@ -6,9 +6,9 @@ import sys
 from sys import argv
 import json
 from functools import partial
-bottle.TEMPLATE_PATH.insert(0, '')
+# bottle.TEMPLATE_PATH.insert(0, os.getcwd())
 # print((0, os.getcwd()))
-# path = sys.path[0]
+path = sys.path[0]
 # the partial makes it possible to write less verbose decorators to choose the html file
 view = partial(jinja2_view, template_lookup=['templates'])
 info = {}
@@ -19,8 +19,8 @@ dummy_data = [{"category": "front end", "address": "18 Shoken Street", "distance
 
 @get('/')
 def index():
-    print(template("/templates/index.html"))
-    return template("/templates/index.html")
+    print(path)
+    return template(path + "\\templates\\index.html")
 
 
 @route('/css/<css_file>')

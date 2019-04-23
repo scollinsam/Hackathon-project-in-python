@@ -64,8 +64,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+            <state relative-caret-position="153">
+              <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -159,8 +159,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="202" />
-    <option name="y" value="49" />
+    <option name="x" value="156" />
     <option name="width" value="1776" />
     <option name="height" value="1032" />
   </component>
@@ -212,6 +211,13 @@
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="TEXT" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../week10/ex3" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <console-settings>
+        <option name="useSoftWraps" value="true" />
+      </console-settings>
+    </option>
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -432,22 +438,21 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="135" y="33" width="1184" height="688" extended-state="0" />
-    <editor active="true" />
+    <frame x="104" y="0" width="1184" height="688" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.80160856" visible="true" weight="0.14821273" />
-      <window_info id="Structure" order="1" sideWeight="0.19839142" side_tool="true" visible="true" weight="0.14821273" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8057743" visible="true" weight="0.14821273" />
+      <window_info id="Structure" order="1" sideWeight="0.19422573" side_tool="true" visible="true" weight="0.14821273" />
       <window_info id="Favorites" order="2" sideWeight="0.5025773" side_tool="true" weight="0.13513513" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32821497" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49837488" weight="0.3147482" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49837488" visible="true" weight="0.3147482" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49960285" weight="0.38669065" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49960285" weight="0.5204263" />
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49837488" weight="0.32733813" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="9" visible="true" weight="0.3291367" />
+      <window_info anchor="bottom" id="Python Console" order="9" weight="0.3291367" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5016251" side_tool="true" weight="0.3111511" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -788,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="42" selection-start-line="21" selection-start-column="42" selection-end-line="21" selection-end-column="42" />
+        <state relative-caret-position="153">
+          <caret line="21" column="15" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
