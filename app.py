@@ -68,4 +68,5 @@ def main():
     run(host='0.0.0.0', port=argv[1])
 
 if __name__ == '__main__':
+    print(argv[1])
     main()
