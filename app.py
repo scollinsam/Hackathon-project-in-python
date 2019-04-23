@@ -6,7 +6,7 @@ import sys
 from sys import argv
 import json
 from functools import partial
-bottle.TEMPLATE_PATH.insert(0, '/templates')
+bottle.TEMPLATE_PATH.insert(0, '')
 # print((0, os.getcwd()))
 # path = sys.path[0]
 # the partial makes it possible to write less verbose decorators to choose the html file
@@ -19,7 +19,8 @@ dummy_data = [{"category": "front end", "address": "18 Shoken Street", "distance
 
 @get('/')
 def index():
-    return template("index.html")
+    print(template("/templates/index.html"))
+    return template("/templates/index.html")
 
 
 @route('/css/<css_file>')
