@@ -82,7 +82,7 @@ def create_url(url):
 
 
 def connection():
-    return pymysql.connect(host='localhost', user='root', passwd='16769thSQL', database='matching', port=3306)
+    return pymysql.connect(host='localhost', user='root', passwd='16769thSQL', database='matching', port=3307)
     # return pymysql.connect(host='db4free.net',
     #                          user='elliotw',
     #                          password='rootless',

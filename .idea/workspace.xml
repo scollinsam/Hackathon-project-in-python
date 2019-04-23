@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="868ca305-8852-455e-8b0c-533c577006af" name="Default Changelist" comment="Trying to debug">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Create_tables.py" beforeDir="false" afterPath="$PROJECT_DIR$/Create_tables.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -115,8 +114,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Create_tables.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="124" column="11" lean-forward="true" selection-start-line="124" selection-start-column="11" selection-end-line="124" selection-end-column="11" />
+            <state relative-caret-position="153">
+              <caret line="84" column="109" selection-start-line="84" selection-start-column="109" selection-end-line="84" selection-end-column="109" />
             </state>
           </provider>
         </entry>
@@ -171,8 +170,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-86" />
-    <option name="y" value="145" />
+    <option name="x" value="66" />
+    <option name="y" value="403" />
     <option name="width" value="1776" />
     <option name="height" value="1032" />
   </component>
@@ -460,7 +459,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-57" y="97" width="1184" height="688" extended-state="0" />
+    <frame x="53" y="6" width="1184" height="688" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.80213904" visible="true" weight="0.14821273" />
@@ -819,8 +818,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Create_tables.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="124" column="11" lean-forward="true" selection-start-line="124" selection-start-column="11" selection-end-line="124" selection-end-column="11" />
+        <state relative-caret-position="153">
+          <caret line="84" column="109" selection-start-line="84" selection-start-column="109" selection-end-line="84" selection-end-column="109" />
         </state>
       </provider>
     </entry>
