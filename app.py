@@ -20,7 +20,7 @@ dummy_data = [{"category": "front end", "address": "18 Shoken Street", "distance
 @get('/')
 def index():
     print(path)
-    return template(path + "\\templates\\index.html")
+    return template(path + "/templates/index.html")
 
 
 @route('/css/<css_file>')
