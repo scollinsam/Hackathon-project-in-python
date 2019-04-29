@@ -1,9 +1,18 @@
 # import mysql.connector
 import pymysql
-from sys import argv
+import psycopg2
+import urllib.parse as urlparse
+import os
+
+url = urlparse.urlparse(os.environ['DATABASE_URL'])
+dbname = url.path[1:]
+user = url.username
+password = url.password
+host = url.hostname
+port = url.port
 
 def create_mysql_db(db_name):
-    mydb = pymysql.connect(host='localhost', user='root', passwd='16769thSQL')
+    mydb = psycopg2.connect(host='localhost', user='root', passwd='16769thSQL')
 
     mycursor = mydb.cursor()
 
@@ -83,7 +92,14 @@ def create_url(url):
 
 
 def connection():
-    return pymysql.connect(host='127.0.0.1', user='root', passwd='16769thSQL', database='matching')
+    return psycopg2.connect(
+            dbname=dbname,
+            user=user,
+            password=password,
+            host=host,
+            port=port
+            )
+    # return psycopg2.connect(host='127.0.0.1', user='root', passwd='16769thSQL', database='matching')
     # return pymysql.connect(host='db4free.net',
     #                          user='elliotw',
     #                          password='rootless',
@@ -151,3 +167,4 @@ def main():
     # create_mysql_table('user_course', 'id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, course_id INT, '
     #                                   'FOREIGN KEY (user_id)'
     #                                   'REFERENCES users(id), FOREIGN KEY (course_id) REFERENCES course(id)')
+main()
