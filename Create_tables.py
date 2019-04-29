@@ -12,7 +12,7 @@ host = url.hostname
 port = url.port
 
 def create_mysql_db(db_name):
-    mydb = psycopg2.connect(host='localhost', user='root', password='16769thSQL')
+    mydb = psycopg2.connect(host='localhost', port=5432, user='root', password='16769thSQL')
 
     mycursor = mydb.cursor()
 
