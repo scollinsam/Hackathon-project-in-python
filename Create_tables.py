@@ -6,7 +6,7 @@ import urllib.parse as urlparse
 import os
 
 proc = subprocess.Popen('heroku config:get DATABASE_URL -a my-heroku-app', stdout=subprocess.PIPE, shell=True)
-db_url = proc.stdout.read().decode('utf-8').strip() + '?sslmode=require'
+db_url = proc.stdout.read().decode('utf-8').strip()
 
 def create_mysql_db(db_name):
     mydb = psycopg2.connect(db_url)
