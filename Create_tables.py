@@ -1,18 +1,15 @@
 # import mysql.connector
 import pymysql
 import psycopg2
+import subprocess
 import urllib.parse as urlparse
 import os
 
-url = urlparse.urlparse(os.environ['DATABASE_URL'])
-dbname = url.path[1:]
-user = url.username
-password = url.password
-host = url.hostname
-port = url.port
+proc = subprocess.Popen('heroku config:get DATABASE_URL -a my-heroku-app', stdout=subprocess.PIPE, shell=True)
+db_url = proc.stdout.read().decode('utf-8').strip() + '?sslmode=require'
 
 def create_mysql_db(db_name):
-    mydb = psycopg2.connect(host='localhost', port=5432, user='root', password='16769thSQL')
+    mydb = psycopg2.connect(db_url)
 
     mycursor = mydb.cursor()
 
