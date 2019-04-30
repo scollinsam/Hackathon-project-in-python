@@ -1,15 +1,11 @@
 # import mysql.connector
 import pymysql
-import psycopg2
-import subprocess
 import urllib.parse as urlparse
 import os
 
-proc = subprocess.Popen('heroku config:get DATABASE_URL -a my-heroku-app', stdout=subprocess.PIPE, shell=True)
-db_url = proc.stdout.read().decode('utf-8').strip()
 
 def create_mysql_db(db_name):
-    mydb = psycopg2.connect(db_url)
+    mydb = pymysql.connect(host='localhost', user='root', password='16769thSQL')
 
     mycursor = mydb.cursor()
 
@@ -89,8 +85,7 @@ def create_url(url):
 
 
 def connection():
-    return psycopg2.connect(db_url)
-    # return psycopg2.connect(host='127.0.0.1', user='root', passwd='16769thSQL', database='matching')
+    return pymysql.connect(host='127.0.0.1', user='root', passwd='16769thSQL', database='matching')
     # return pymysql.connect(host='db4free.net',
     #                          user='elliotw',
     #                          password='rootless',
@@ -158,4 +153,3 @@ def main():
     # create_mysql_table('user_course', 'id INT AUTO_INCREMENT PRIMARY KEY, user_id INT, course_id INT, '
     #                                   'FOREIGN KEY (user_id)'
     #                                   'REFERENCES users(id), FOREIGN KEY (course_id) REFERENCES course(id)')
-main()
