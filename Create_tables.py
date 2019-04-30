@@ -8,7 +8,7 @@ import os
 proc = subprocess.Popen('heroku config:get DATABASE_URL -a my-heroku-app', stdout=subprocess.PIPE, shell=True)
 db_url = proc.stdout.read().decode('utf-8').strip()
 
-def create_mysql_db(db_name):
+def create_mysql_db(db_url, db_name):
     mydb = psycopg2.connect(db_url)
 
     mycursor = mydb.cursor()
@@ -89,13 +89,7 @@ def create_url(url):
 
 
 def connection():
-    return psycopg2.connect(
-            dbname=dbname,
-            user=user,
-            password=password,
-            host=host,
-            port=port
-            )
+    return psycopg2.connect(db_url)
     # return psycopg2.connect(host='127.0.0.1', user='root', passwd='16769thSQL', database='matching')
     # return pymysql.connect(host='db4free.net',
     #                          user='elliotw',
