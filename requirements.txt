@@ -14,7 +14,7 @@ Jinja2==2.6
 MarkupSafe==1.1.0
 multidict==4.5.2
 mysql-connector-python==8.0.13
-numpy==1.15.4
+numpy==1.22.0
 opencage==1.1.6
 psycopg2==2.7.6.1
 PyMySQL==0.8.0
