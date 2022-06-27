@@ -13,7 +13,7 @@ idna-ssl==1.1.0
 Jinja2==2.6
 MarkupSafe==1.1.0
 multidict==4.5.2
-mysql-connector-python==8.0.13
+mysql-connector-python==8.0.14
 numpy==1.15.4
 opencage==1.1.6
 psycopg2==2.7.6.1
